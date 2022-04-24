@@ -38,6 +38,8 @@ class DeepQNetwork:
         self.double_q = double_q
         self.learn_step_counter = 0
         self.N_L1 = N_L1
+        self.bendi=0
+        self.xiezai=0
 
         # lstm
         self.N_lstm = N_lstm
@@ -233,8 +235,12 @@ class DeepQNetwork:
             action = np.random.randint(0, self.n_actions)
 
         if action == 0:
+            self.bendi+=1
+            print("bendi:-----------------"+str(self.bendi))
             return 0
         else:
+            self.xiezai+=1
+            print("xiezai:-----------------"+str(self.xiezai))
             return 1
 
     def learn(self):
