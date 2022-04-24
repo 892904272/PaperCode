@@ -1,7 +1,7 @@
-bendi=200
+bendi=200-50
 
-bendiEnergy = 4*0.775*bendi*0.9
+bendiEnergy = 8*0.775*bendi*0.9
 
 
 
-print("bendi:"+str(bendiEnergy))
+print(str(bendiEnergy))

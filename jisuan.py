@@ -1,6 +1,6 @@
-bendi=30
-xiezai =60
-daxiao = 10
+bendi=42
+xiezai = 135
+daxiao = 8
 total =xiezai
 
 
