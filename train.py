@@ -196,7 +196,7 @@ if __name__ == "__main__":
     NUM_FOG = 2#边缘节点
     NUM_EPISODE = 10#迭代次数
     NUM_TIME_BASE = 100#
-    MAX_DELAY = 10#时隙    #10时隙代表1s
+    MAX_DELAY = 30#时隙    #10时隙代表1s
     NUM_TIME = NUM_TIME_BASE + MAX_DELAY
 
     # GENERATE ENVIRONMENT生成环境
