@@ -211,28 +211,31 @@ class DeepQNetwork:
         #     action = np.random.randint(0, self.n_actions)
         #
         # return 0
-        # observation = observation[np.newaxis, :]
-        #
-        # if np.random.uniform() < self.epsilon:
-        #
-        #     # lstm only contains history, there is no current observation
-        #     lstm_observation = np.array(self.lstm_history)
-        #
-        #     actions_value = self.sess.run(self.q_eval,
-        #                                   feed_dict={self.s: observation,
-        #                                              self.lstm_s: lstm_observation.reshape(1, self.n_lstm_step,
-        #                                                                                    self.n_lstm_state),
-        #                                              })
-        #
-        #     self.store_q_value.append({'observation': observation, 'q_value': actions_value})
-        #
-        #     action = np.argmax(actions_value)
-        #
-        # else:
-        #
-        #     action = np.random.randint(0, self.n_actions)
+        observation = observation[np.newaxis, :]
 
-        return 1
+        if np.random.uniform() < self.epsilon:
+
+            # lstm only contains history, there is no current observation
+            lstm_observation = np.array(self.lstm_history)
+
+            actions_value = self.sess.run(self.q_eval,
+                                          feed_dict={self.s: observation,
+                                                     self.lstm_s: lstm_observation.reshape(1, self.n_lstm_step,
+                                                                                           self.n_lstm_state),
+                                                     })
+
+            self.store_q_value.append({'observation': observation, 'q_value': actions_value})
+
+            action = np.argmax(actions_value)
+
+        else:
+
+            action = np.random.randint(0, self.n_actions)
+
+        if action == 0:
+            return 0
+        else:
+            return 1
 
     def learn(self):
 
