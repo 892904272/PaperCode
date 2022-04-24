@@ -32,7 +32,7 @@ plt.plot(x,y2,color="red",marker="x",label="offload")
 plt.plot(x,y3,color="black",marker="D",label="DQN")
 plt.plot(x,y4,color="gray",marker="H",label="DDPG")
 plt.plot(x,y5,color="green",marker="*",label="PER-DDPG")
-plt.xlabel("task big and small",fontproperties="SimSun")
+plt.xlabel("task arrival probability",fontproperties="SimSun")
 plt.ylabel("Energy consumption",fontproperties="SimSun")
 
 plt.legend()

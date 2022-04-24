@@ -2,6 +2,8 @@ import numpy as np
 import random
 import math
 import queue
+import random
+import string
 
 class Offload:
 
@@ -29,12 +31,19 @@ class Offload:
         self.comp_cap_fog = 3.2 * np.ones([self.n_fog]) * self.duration  # Gigacycles per second * duration 千兆周/秒*持续时间，fog计算队列能力矩阵
         self.tran_cap_iot = 14 * np.ones([self.n_iot, self.n_fog]) * self.duration  # Mbps * duration Mbps*持续时间，iot传输队列
         self.comp_density = 0.31 * np.ones([self.n_iot])  # 0.297 Gigacycles per Mbits 每兆比特0.297千兆周
-        self.max_delay = max_delay # time slots  时隙？
+        # self.youxiann=random.randint(1,9)
+        # if self.youxiann<=1 :
+        #     self.max_delay = max_delay # time slots  时隙？
+        #     self.youxiann=1
+        # else:
+        #     self.max_delay = 5
+        #     self.youxiann=0
+        self.max_delay = max_delay
 
         # BITARRIVE_SET (MARKOVIAN)
         self.task_arrive_prob = 0.2#任务到达率
-        self.max_bit_arrive = 7# Mbits 任务最大
-        self.min_bit_arrive = 7 # Mbits 任务最小
+        self.max_bit_arrive = 8# Mbits 任务最大
+        self.min_bit_arrive = 8 # Mbits 任务最小
         self.bitArrive_set = np.arange(self.min_bit_arrive, self.max_bit_arrive, 0.1)#返回一个2-5，步长为0.1的列表
         self.bitArrive = np.zeros([self.n_time, self.n_iot])#n_time为行，n_iot为列
 

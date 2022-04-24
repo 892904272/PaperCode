@@ -157,34 +157,34 @@ def train(iot_RL_list, NUM_EPISODE):
         #  ======================================== DRL END=================================================
         #  =================================================================================================
 
-    # print("diedaicishu ")
-    # print(episode)
-    # print("process_delay")
-    # print(process_delay)
-    # print("总时延：")
-    # print(process_delay.sum())
-    # print("process_delay.shape[0]")
-    # print(process_delay.shape[0])
-    # print(process_delay.shape[1])
-    #
-    # print("总个数")
+    print("diedaicishu ")
+    print(episode)
+    print("process_delay")
+    print(process_delay)
+    print("总时延：")
+    print(process_delay.sum())
+    print("process_delay.shape[0]")
+    print(process_delay.shape[0])
+    print(process_delay.shape[1])
+
+    print("总个数")
     x=0
     for i in range(process_delay.shape[0]):
         for j in range(process_delay.shape[1]):
             if process_delay[i][j]!=0:
                 x = x+1
-    # print(x)
+    print(x)
     obadfjk=0
     obadfjk=x
-    # print("unfinish_indi")
-    # print(unfinish_indi)
+    print("unfinish_indi")
+    print(unfinish_indi)
     x=0
     for i in range(unfinish_indi.shape[0]):
         for j in range(unfinish_indi.shape[1]):
             if unfinish_indi[i][j]!=0:
                 x = x+1
-    # print("未完成任务数")
-    # print(x)
+    print("未完成任务数")
+    print(x)
     data = open("za/dqnEnd.txt", 'a')
     print("设备数"+str(process_delay.shape[1])+'总任务数'+str(obadfjk)+"总时延"+str(process_delay.sum())+"未完成任务数"+str(x), file=data)
     data.close()
