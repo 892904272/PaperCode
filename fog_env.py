@@ -32,7 +32,7 @@ class Offload:
         self.max_delay = max_delay # time slots  时隙？
 
         # BITARRIVE_SET (MARKOVIAN)
-        self.task_arrive_prob = 0.2#任务到达率
+        self.task_arrive_prob = 1#任务到达率
         self.max_bit_arrive = 2 # Mbits 任务最大
         self.min_bit_arrive = 2 # Mbits 任务最小
         self.bitArrive_set = np.arange(self.min_bit_arrive, self.max_bit_arrive, 0.1)#返回一个2-5，步长为0.1的列表

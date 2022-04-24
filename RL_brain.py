@@ -232,7 +232,7 @@ class DeepQNetwork:
         #
         #     action = np.random.randint(0, self.n_actions)
 
-        return 0
+        return 1
 
     def learn(self):
 
