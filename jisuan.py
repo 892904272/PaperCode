@@ -1,8 +1,13 @@
-bendi=355
-xiezai =660
+bendi=30
+xiezai =60
+daxiao = 10
+total =xiezai
 
-bendiEnergy = bendi*2*0.9
-xiezaiEnergy = xiezai*0.14*1.3+xiezai*0.2*10
+
+bendiEnergy = daxiao*0.775*bendi*0.9
+
+
+xiezaiEnergy = total*(daxiao/14)*1.3+xiezai*(daxiao*0.1)*10
 
 print("bendi:"+str(bendiEnergy))
 print("xiezai:"+str(xiezaiEnergy))
