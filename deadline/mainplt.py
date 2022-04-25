@@ -24,7 +24,7 @@ y2=(572.5714285714287,756.5714285714286,988.5714285714286,1164.5714285714287,122
 y3=(1129,1328.142857142857,  1414.6457142857143, 1503.0,  1622.057142857143)
 y4=(1099,1249,1265,1321,1387)
 y5=(999,1189,1209,1276,1321)
-
+#deadline
 plt.xlim(10,30)
 # plt.ylim(0,1)
 plt.plot(x,y,color="blue",marker="o",label="local")
@@ -32,7 +32,7 @@ plt.plot(x,y2,color="red",marker="x",label="offload")
 plt.plot(x,y3,color="black",marker="D",label="DQN")
 plt.plot(x,y4,color="gray",marker="H",label="DDPG")
 plt.plot(x,y5,color="green",marker="*",label="PER-DDPG")
-plt.xlabel("task arrival probability",fontproperties="SimSun")
+plt.xlabel("deadline",fontproperties="SimSun")
 plt.ylabel("Energy consumption",fontproperties="SimSun")
 
 plt.legend()
